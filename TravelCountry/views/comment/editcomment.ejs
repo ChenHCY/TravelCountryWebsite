@@ -1,0 +1,142 @@
+<%- include("../_partial/_header") -%>
+<div class="float-container bg">
+
+    <div class="col-md-10 col-sm-6 col-xs-12">
+        <form action="/comments/update" method="POST" enctype="multipart/form-data">
+            <% error.forEach(function (err) { %>
+                <div class="alert alert-danger" role="alert" style="text-align:center;">
+                    <%= err.msg %>
+                </div>
+                <% }); %>
+                
+                <% if(info && info.length > 0) { %>
+                    <div class="alert alert-info" role="alert">
+                        <%= info %>
+                    </div>
+                <% } %>
+            <div class="float-childl">
+
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">Country Name</span>
+                    <input type="text" class="form-control" placeholder="countryName" name="countryName" aria-describedby="basic-addon1" value="<%= comment.countryName%>">
+                </div>
+                <br />
+
+                <div class="input-group">
+                    <span class="input" style="background-color:white; color: grey; font-weight: bold; font-size: large" id="basic-addon1">Area State</span><br /><br />
+                        <% if(comment.state.includes('Asian')){ %>
+                            <input type="checkbox" name="state" value="Asian" checked>
+                        <% }else{ %>
+                            <input type="checkbox" name="state" value="Asian">
+                         <% } %>
+                            <label for="Asian">Asian</label><br />
+                        <% if(comment.state.includes('Europe')){ %>
+                            <input type="checkbox" name="state" value="Europe" checked>
+                        <% }else{ %>
+                            <input type="checkbox" name="state" value="Europe">   
+                        <% } %>
+                            <label for="Europe">Lunch</label><br />
+                        <% if(comment.state.includes('North America')){ %>
+                            <input type="checkbox" name="state" value="North America" checked>
+                        <% }else{ %>
+                            <input type="checkbox" name="state" value="North America">                               
+                        <% } %>
+                            <label for="North America">North America</label><br />
+                        <% if(comment.state.includes('South America')){ %>
+                            <input type="checkbox" name="state" value="South America" checked>
+                        <% }else{ %>
+                            <input type="checkbox" name="state" value="South America">                               
+                        <% } %>
+                            <label for="South America">South America</label><br />
+                        <% if(comment.state.includes('Africa')){ %>
+                            <input type="checkbox" name="state" value="Africa" checked>
+                         <% }else{ %>
+                            <input type="checkbox" name="state" value="Africa">                            
+                        <% } %>
+                        <label for="Africa">Africa</label><br />
+                        <% if(comment.state.includes('Oceania')){ %>
+                            <input type="checkbox" name="state" value="Oceania" checked>
+                         <% }else{ %>
+                            <input type="checkbox" name="state" value="Oceania">                     
+                        <% } %>
+                        <label for="Oceania">Oceania</label><br />
+                </div>
+            </div>
+            <br />
+
+            <div class="float-childr">
+
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">Travel Start Date</span>
+                    <input type="text" name="startDate" class="form-control" aria-describedby="basic-addon1" value="<%= comment.startDate %>">
+                </div>
+                <br />
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">Travel Ends Date </span>
+                    <input type="text" name="endDate" class="form-control" aria-describedby="basic-addon1" value="<%= comment.endDate %>">
+                </div>
+                <br />
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">Details</span>
+                    <textarea name="details" id="details" rows="4" cols="50" class="form-control" aria-describedby="basic-addon1"><%=comment.details%></textarea>
+                </div>
+                <script>
+                     CKEDITOR.replace('details');
+                </script>
+                <br />
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">Tag</span>
+                    <input type="text" name="tag" class="form-control" aria-describedby="basic-addon1"  value = "<%= comment.tag %>">
+                </div>
+                <br />
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">Travel Feeling</span>
+                    <select name="travelFeeling" id="travelFeeling" class="form-control" aria-describedby="basic-addon1">
+                        <% if(comment.travelFeeling == 'verygood'){ %>
+                            <option value="verygood" selected>Very Good</option>
+                        <% }else { %>
+                            <option value="verygood">Very Good</option>
+                        <% } %>
+                        <% if(comment.travelFeeling == 'good'){ %>
+                            <option value="good" selected>Good</option>
+                        <% }else { %>
+                            <option value="good">Good</option>
+                        <% } %>
+                        <% if(comment.travelFeeling == 'normal'){ %>
+                            <option value="normal" selected>normal</option>
+                        <% }else { %>
+                            <option value="normal">normal</option>
+                        <% } %>
+                        <% if(comment.travelFeeling == 'bad'){ %>
+                            <option value="bad" selected>Bad</option>
+                        <% }else { %>
+                            <option value="bad">Bad</option>
+                        <% } %>
+                        <% if(comment.travelFeeling == 'verybad'){ %>
+                            <option value="verybad" selected>Very Bad</option>
+                        <% }else { %>
+                            <option value="verybad">Very Bad</option>
+                        <% } %>
+                    </select>
+                </div>
+                <br />
+                <div class="input-group">
+                    <input type="file" name="images" accept="images/*" multiple>
+                </div>
+                <br />
+
+                <input type="hidden" id="planId" name="planId" value="<%= comment._id%>" />
+
+                <div class="form-group">
+                        <button type = "submit" name = "vote" value = "cancel" class="btn btn-default" style = "background-color: red; color: white;" href = "#" role="button">Cancel</button> 
+                        <button type = "submit" name = "vote" value = "update" class="btn btn-default" style = "background-color: red; color: white;  float: right" href="#" role="button">Update</button>                
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+<%- include("../_partial/_footer") -%>

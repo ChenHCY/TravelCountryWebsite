@@ -1,0 +1,23 @@
+.positionedSearch {
+    width: 220px;
+    height: 35px;
+    position: absolute;
+    top: 6px;
+    margin-left: -300px;
+    margin-top: 1rem;
+    border: 1px solid grey;
+    border-radius: 5px;
+    outline: 0;
+}
+
+.positionedSearch:hover, .positionedSearch:focus {
+    border: 2px solid white;
+    background-color: white;    
+}
+
+.navbar-brand {
+  margin-left: -15px;
+  margin-top: 5px;
+  font-family: Open Sans; font-size: 30px;
+  font-weight: bold; letter-spacing: -1px; line-height: 1;
+}

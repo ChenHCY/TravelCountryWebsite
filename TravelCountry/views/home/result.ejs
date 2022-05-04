@@ -1,0 +1,77 @@
+<%- include('../_partial/_header') -%>
+
+<div class="container-fluid">
+    <div class="tm-body">
+        <div class="tm-sidebar sticky">
+            <section id="welcome" class="tm-content-box tm-banner margin-b-20">
+                <div class="tm-banner-inner">
+                    <h1 class="tm-banner-title">Area State</h1>              
+                </div>                    
+            </section>
+            <nav class="tm-main-nav">
+                <ul class="tm-main-nav-ul">
+                    <li class="tm-nav-item"><a href="/result/Asian" class="tm-nav-item-link tm-button">Asian</a>
+                    </li>
+                    <li class="tm-nav-item"><a href="/result/Europe" class="tm-nav-item-link tm-button">Europe</a>
+                    </li>
+                    <li class="tm-nav-item"><a href="/result/North America" class="tm-nav-item-link tm-button">North America</a>
+                    </li>
+                    <li class="tm-nav-item"><a href="/result/South America" class="tm-nav-item-link tm-button">South America</a>
+                    </li>
+                    <li class="tm-nav-item"><a href="/result/Africa" class="tm-nav-item-link tm-button">Africa</a>
+                    </li>
+                    <li class="tm-nav-item"><a href="/result/Oceania" class="tm-nav-item-link tm-button">Oceania</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="tm-main-content tm-gallery-container">   
+            <div class="col-md-offset-2 col-md-8 col-sm-12 text-center">
+				<h2 style= "color:#008080; font-style:italic">Pouplar Travel Country</h2> 
+				<hr>
+            </div>
+
+                <!-- List all the comments -->
+            <% comments.forEach(function(comment) { %>
+                <div class="col-sm-4 col-md-6">
+                    <div class=" crop thumbnail">
+                        <% if(comment.image != null) {%>
+                            <% image_url = (typeof comment.image[0] === 'string') ? comment.image[0] : comment.image[0].path %>
+
+                            <% if(currentUser != null){ %>           
+                                <a href="/comments/detail/<%= comment._id %>"><img src="<%= '/' + image_url %>" alt="Image" ></a>
+                                <%}%>
+                            <% if(currentUser == null){ %>
+                                    <a href="/home/<%= comment._id %>"><img src="<%= '/' + image_url %>" alt="Image"></a>
+                                <%}%>  
+
+                        <% }else{ %>
+
+                            <% if(currentUser != null){ %>           
+                                <a href="/comments/detail/<%= comment._id %>"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTkyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDE5MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTcyYWQ2ZmYwZmQgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMHB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNzJhZDZmZjBmZCI+PHJlY3Qgd2lkdGg9IjE5MiIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI3MC4wNTQ2ODc1IiB5PSIxMDQuNTYwOTM3NSI+MTkyeDIwMDwvdGV4dD48L2c+PC9nPjwvc3ZnPg=="
+                                    alt="logo"
+                                    style="height:200px;width:100%;display:block"></a>
+                                <%}%>
+                            <% if(currentUser == null){ %>
+                                <a href="/home/<%= comment._id %>"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTkyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDE5MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTcyYWQ2ZmYwZmQgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMHB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNzJhZDZmZjBmZCI+PHJlY3Qgd2lkdGg9IjE5MiIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI3MC4wNTQ2ODc1IiB5PSIxMDQuNTYwOTM3NSI+MTkyeDIwMDwvdGV4dD48L2c+PC9nPjwvc3ZnPg=="
+                                    alt="logo"
+                                    style="height:200px;width:100%;display:block"></a>
+                                <%}%>  
+                        <% } %>
+
+
+                            <% if(currentUser != null){ %>           
+                                    <a href="/comments/detail/<%= comment._id %>"><h3 style="text-align:center; color: black"><%= comment.countryName %></h3></a>
+                                <%}%>
+                            <% if(currentUser == null){ %>
+                                    <a href="/home/<%= comment._id %>"><h3 style="text-align:center; color: black"><%= comment.countryName %></h3></a>
+                                <%}%>  
+                    </div>
+                </div>
+                <% }) %>
+        </div><!-- tm-main-content -->
+    </div>
+</div> 
+</body>
+<%- include('../_partial/_footer') -%>

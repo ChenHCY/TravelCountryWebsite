@@ -1,0 +1,140 @@
+<!-- ----------------------------Home page End ------------------------------------------------>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+<%- include('../_partial/_header') -%>
+
+<section class="home" id="home">
+    <div class="swiper home-slider">
+  
+      <div class="swiper-wrapper">
+          <div class="swiper-slide back" style="background: url(/views/img/dashBoard.jpg) no-repeat;">
+              <div class="content">
+                  <span>Travel the world together</span>
+                  <h3>I enjoy traveling , especially to very different places</h3>
+              </div>
+          </div>
+      </div>
+   </div>
+</section>
+
+<!--------------------------------------- Country Part ------------------------------------------------>
+<section class = "place" id ="place">
+    <div class="heading"> Country </div>
+
+    <div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4">
+
+        <a href="/result/Asian" class="col text-center card__link">
+          <div class="card__img shadow">
+            <img src="/views/img/Asian.jpg" alt="Asian" loading="lazy">
+          </div>
+          <div class="pt-1">Asian Country</div>
+        </a>
+      
+        <a href="/result/Europe" class="col text-center card__link">
+          <div class="card__img shadow">
+            <img src="/views/img/Europe City.jpg" alt="Europe" loading="lazy">
+          </div>
+          <div class="pt-1">Europe Country</div>
+        </a>
+      
+        <a href="/result/North America" class="col text-center card__link">
+          <div class="card__img shadow">
+            <img src="/views/img/North America.jpg" alt="North America" loading="lazy">
+          </div>
+          <div class="pt-1">North America Country</div>
+        </a>
+      
+        <a href="/result/South America" class="col text-center card__link">
+          <div class="card__img shadow">
+            <img src="/views/img/South America.jpg" alt="South America" loading="lazy">
+          </div>
+          <div class="pt-1">South America Country</div>
+        </a>
+      
+        <a href="/result/Africa" class="col text-center card__link">
+          <div class="card__img shadow">
+            <img src="/views/img/Africa.jpg" alt="Africa" loading="lazy">
+          </div>
+          <div class="pt-1">Africa Country</div>
+        </a>
+      
+        <a href="/result/Oceania" class="col text-center card__link">
+          <div class="card__img shadow">
+            <img src="views/img/Oceania.jpg" alt="Oceania" loading="lazy">
+          </div>
+          <div class="pt-1">Oceania Country</div>
+        </a>
+    </div>
+
+</section>
+<!-- Categories End -->
+  
+<!-- ---------------------------------------About End ------------------------------------------------>
+<section class = "about" id ="about">
+    <div class="heading"> About us</div>
+
+    <div class="about colum">
+        <div class="about area">
+            <ul class="about list">
+                <li class="about one">
+                    <a><img src="/views/img/travel1.jpg" alt=""></a>
+                    <div class="word">
+                        <p>Asian Popular Travel Country</p>
+                    </div>
+                </li>
+                <li class="about one">
+                    <a><img src="/views/img/travel2.jpg" alt=""></a>
+                    <div class="word">
+                        <p>Europe Popular Travel Country</p>
+                    </div>
+                </li>
+                <li class="about one">
+                    <a><img src="/views/img/travel4.jpg" alt=""></a>
+                    <div class="word">
+                        <p> America Popular Travel Country</p>
+                    </div>
+                </li>
+                <li class="about one">
+                    <a><img src="/views/img/travel3.jpg" alt=""></a>
+                    <div class="word">
+                        <p>Africa Popular Travel Country</p>
+                    </div>
+                </li>
+
+                <li class="about one">
+                    <a><img src="views/img/travel5.jpg" alt=""></a>
+                    <div class="word">
+                        <p>Oceania Popular Travel Country</p>
+                    </div>
+                </li>
+            </ul>
+            <button class="btn" id="Prev"><i class="fas fa-arrow-left"></i></button>
+            <button class="btn" id="Next"><i class="fas fa-arrow-right"></i></button>
+            <ul class="about pointList">
+                <li class="point"></li>
+                <li class="point"></li>
+                <li class="point"></li>
+                <li class="point"></li>
+                <li class="point"></li>
+            </ul>
+        </div>
+    
+  
+        <div class="boxWrapper">
+            <div class="box">
+                <a>1. The world is a book and those who do not travel read only one page</a>
+                <h1>~ Saint Augustine.</h1>
+                <a>2. Life is either a daring adventure or nothing at all</a>
+                <h1>~ Helen Keller.</h1>
+                <h2><strong>Our Website is for sharing the popular travel country, and people's travel experience.</strong></h2>
+                <h2><strong>Team: CS160 Group 7 </strong></h2>
+            </div>
+        </div>
+          
+    </div>
+</section>
+
+
+
+<%- include('../_partial/_footer') -%>

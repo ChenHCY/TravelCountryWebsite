@@ -1,0 +1,55 @@
+.bottom {
+  background: rgba(8, 81, 94);
+}
+
+.bottom .region {
+  display: -ms-grid;
+  display: grid;
+  gap: 2rem;
+  padding-left: 9%;
+  margin-top: 6rem;
+  -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+}
+
+.bottom .region .box h3 {
+  font-size: 2.2rem;
+  text-transform: capitalize;
+  color: rgb(77, 255, 136);
+  padding: 1rem 0;
+  font-family: 'Ma Shan Zheng', cursive;
+}
+
+.bottom .region .box p {
+  font-size: 2rem;
+  line-height: 2;
+  color: white;
+  padding: 1rem 0;
+  font-family: 'Kaushan Script', cursive;
+}
+
+.bottom .region .box a {
+  font-size: 2rem;
+  line-height: 2;
+  color: white;
+  padding: 1rem 0;
+  font-family: 'Ma Shan Zheng', cursive;
+}
+
+.bottom .credit {
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 3rem;
+  font-size: 3rem;
+  text-transform: capitalize;
+  color: white;
+  border-top: 0.1rem solid #ffefd5;
+  text-transform: lowercase;
+  font-family: 'Kaushan Script', cursive;
+}
+
+.bottom .credit span {
+  color: white;
+  font-family: 'Kaushan Script', cursive;
+}
+/*Bottom Part end*/
