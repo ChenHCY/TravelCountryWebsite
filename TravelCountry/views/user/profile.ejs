@@ -1,0 +1,54 @@
+<%- include("../_partial/_header") -%>
+
+<div class="wrapper" style="margin-top: 100px;">
+    <div class="left">
+        <img src="views/images/user.jpg" width="10" height="10" alt="user">
+        <h4  style="text-align:center; padding-top: 1px"><%= user.firstname %> <%= user.lastname %><br /> <%= user.username %> </h4>
+        <div class="info_data">
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="info">
+            <h3><strong>User Information</strong></h3>
+            <div class="info_data">
+                <div class="data">
+                    <h4>Username </h4>
+                    <p><%= user.username %></p>
+                </div>
+                <div class="data">
+                    <h4>First Name </h4>
+                    <p><%= user.firstname %></p>
+                </div>
+                <div class="data">
+                    <h4>Last Name</h4>
+                    <p><%= user.lastname %></p>
+                </div>
+            </div>
+            <div class="info_data">
+                <div class="data">
+                    <h4>Email</h4>
+                    <p><%= user.email %></p>
+                </div>
+                <div class="data">
+                    <h4>Created At </h4>
+                    <p><%= user.createdAt %></p>
+                </div>
+                <div class="data">
+                    <h4> </h4>
+                    <p> </p>
+                </div>
+            </div>
+            <div class="info_data">
+                <div class="data">
+                    <h4>Favorite Countrys: </h4>
+                    <% comment.forEach(function(comment) { %>
+                    <p><a href="comments/detail/<%=comment._id %>"><%= comment.countryName %></a> </p>
+                    <% }) %>
+                </div>
+            </div>      
+        </div>
+    </div>
+</div>
+</body>
+
