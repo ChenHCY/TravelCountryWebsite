@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Travel Website</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" type="text/css" href="/views/css/login.css">
+    <link rel="stylesheet" type="text/css" href="/views/css/_header.css">
+    <link rel="stylesheet" type="text/css" href="/views/css/body.css">
+    <link rel="stylesheet" type="text/css" href="/views/css/signup.css">
+    <link rel="stylesheet" type="text/css" href="/views/css/register.css">
+    <link rel="stylesheet" type="text/css" href="/views/css/addcomments.css">
+    <link rel="stylesheet" type="text/css" href="/views/css/detail.css" />
+    <link rel="stylesheet" type="text/css" href="/views/css/profile.css" />
+
+    <link rel="stylesheet" type="text/css" href="/views/css/main/layout.css">
+    <link rel="stylesheet" type="text/css" href="/views/css/main/page.css" />
+    <link rel="stylesheet" type="text/css" href="/views/css/main/styles.css" />
+    <link rel="stylesheet" type="text/css" href="/views/css/_footer.css" />
+    <link rel="stylesheet" type="text/css" href="/views/css/comment.css" />
+    
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.ckeditor.com/4.16.2/basic/ckeditor.js"></script>
+
+    <!-- font words cdn link  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg" id="navbar">
+    <a href="#home" class="navbar-brand text-capitalize primary-color"> Travel Website</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
+         <div class="toggler-btn">
+            <div class="bar bar1"></div>
+            <div class="bar bar2"></div>
+            <div class="bar bar3"></div>
+        </div>
+    </button>
+    <!-- links -->
+    <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="navbar-nav max-auto">
+            <li class="nav-item">
+                <a href="/" class="nav-link text-capitalize">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#about" class="nav-link text-capitalize">About</a>
+            </li>
+
+            <li class="nav-item">
+                <a href="/result" class="nav-link text-capitalize">Country</a>
+            </li>
+
+            <li class="nav-item">
+                <a href="/comments/add" class="nav-link text-capitalize">Submit</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <form class="searchBox" method="POST" action="/result/search">
+                <input class="positionedSearch" type="search" placeholder="Search" aria-label="Search"
+                    name="searchContent">
+            </form>
+
+            <% if(currentUser !=null){ %>
+                <li><a href="/comments" style="color:rgb(77, 255, 136);">My Travel</a></li>
+                <li><a href="/profile" style="color:rgb(77, 255, 136);">Welcome, <%= currentUser.username %>! </a></li>
+                <li><a href="/logout" style="color:red;">Logout</a></li>
+                <%}%>
+                    <% if(currentUser==null){ %>
+                        <li><a href="/login" style="color:red;">Log In</a></li>
+                        <li><a href="/signup"style="color:rgb(77, 255, 136);">Sign Up</a>
+                        <li>
+                            <%}%>
+        </ul>
+    </div>
+</nav>
+
+
