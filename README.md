@@ -3,7 +3,7 @@ This is a website for sharing the popular travel country and help people make a 
 
 ● As the main designer and developer participated in the website development life-cycle from design through the implementation that can support millions of users with less travel experience in a new country can make the best travel plan.
 
-● Developed and maintained web applications and testing website features using HTML, CSS, EJS, Node.JS, MongoDBAtlasdatabases, and Mocha and Chai. 
+● Developed and maintained web applications and testing website features using HTML, CSS, EJS, Node.JS, MongoDB Atlas databases, and Mocha and Chai. 
 
 ● Constructed the user interfaces, features, and intuitive layouts for the website utilizing CSS, HTML, EJS, and bootstrap. 
 
