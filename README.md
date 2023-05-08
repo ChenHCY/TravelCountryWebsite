@@ -8,3 +8,6 @@ This is a website for sharing the popular travel country and help people make a 
 ● Constructed the user interfaces, features, and intuitive layouts for the website utilizing CSS, HTML, EJS, and bootstrap. 
 
 ● Saving User account data and the Country's comments into the database through MongoDB, and shown in the website interfaces. Including can add the like comments links to the user's profile.
+
+
+![travel](https://user-images.githubusercontent.com/60770401/236743181-a9db37ef-852e-4382-b722-5cc786b1aaa4.png)
