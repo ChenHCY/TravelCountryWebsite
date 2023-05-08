@@ -9,5 +9,11 @@ This is a website for sharing the popular travel country and help people make a 
 
 ● Saving User account data and the Country's comments into the database through MongoDB, and shown in the website interfaces. Including can add the like comments links to the user's profile.
 
-
+Home Page:
 ![travel](https://user-images.githubusercontent.com/60770401/236743181-a9db37ef-852e-4382-b722-5cc786b1aaa4.png)
+
+![home page](https://user-images.githubusercontent.com/60770401/236743658-3aaa4b47-ee32-41d0-ada7-71bd53c06a11.png)
+
+
+Country Page:
+![Country Page](https://user-images.githubusercontent.com/60770401/236743649-eb00a226-3a8d-4828-8d90-25bb62ab7094.png)
